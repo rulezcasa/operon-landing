@@ -1,15 +1,10 @@
 {
-  "title": "Light, fast & responsive",
-  "text": "This template is ready to use, so you don't need to change anything at a component level, unless you want to customize the default styling.",
+  "title": "No new software and No learning curve",
+  "text": "Just plug into the calls and chat channels you're already on. No new CRM adaptations.",
   "section": [
     {
-      "title": "Why Antd?",
-      "content": "Ant Design is a React UI library that has a lot of easy-to-use components for building elegant UI.",
-      "icon": "notes.svg"
-    },
-    {
-      "title": "Why styled-components?",
-      "content": "Styled Components gives you total control over your components.",
+      "title": "WE BUILD FOR EVERY NICHE",
+      "content": "Agents across industries tailored for your use case and business context.",
       "icon": "notes.svg"
     }
   ]

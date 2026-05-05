@@ -9,8 +9,8 @@ export const StyledContainer = styled("div")<{
   margin-right: auto;
   margin-left: auto;
   padding: 0 60px;
-  overflow: hidden;
-  border-top: ${(p) => (p.border ? "1px solid #CDD1D4" : "")};
+  overflow: visible;
+  border-top: ${(p) => (p.border ? "1px solid rgba(255, 255, 255, 0.08)" : "")};
 
   @media only screen and (max-width: 1024px) {
     max-width: calc(100% - 68px);

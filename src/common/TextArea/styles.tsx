@@ -17,4 +17,6 @@ export const Label = styled("label")`
   display: block;
   padding-bottom: 10px;
   text-transform: capitalize;
+  color: rgba(203, 213, 225, 0.85);
+  letter-spacing: 0.02em;
 `;

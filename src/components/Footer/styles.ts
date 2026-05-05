@@ -2,14 +2,18 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const FooterSection = styled("footer")`
-  background: rgb(241, 242, 243);
+  background: rgba(8, 10, 16, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
   padding: 2.5rem 0;
+  box-shadow: 0 -32px 80px rgba(0, 0, 0, 0.35);
 `;
 
 export const Title = styled("h4")`
   font-size: 22px;
   text-transform: capitalize;
-  color: #18216d;
+  color: rgba(248, 250, 252, 0.92);
 
   @media screen and (max-width: 414px) {
     padding: 1.5rem 0;
@@ -20,22 +24,25 @@ export const NavLink = styled(Link)`
   display: block;
   font-size: 1rem;
   margin-bottom: 0.625rem;
-  transition: all 0.2s ease-in-out;
+  color: rgba(203, 213, 225, 0.78);
+  transition: color 0.25s ease, text-shadow 0.25s ease;
 
   &:hover,
   &:active,
   &:focus {
-    color: #15418e;
+    color: #22d3ee;
+    text-shadow: 0 0 20px rgba(34, 211, 238, 0.35);
   }
 `;
 
 export const Extra = styled("section")`
-  background: rgb(241, 242, 243);
+  background: rgba(5, 6, 10, 0.85);
   position: relative;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
   padding-bottom: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 `;
 
 export const LogoContainer = styled("div")`
@@ -43,42 +50,60 @@ export const LogoContainer = styled("div")`
   position: relative;
 `;
 
+export const Copyright = styled("p")`
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(148, 163, 184, 0.86);
+  text-align: right;
+
+  @media only screen and (max-width: 768px) {
+    text-align: left;
+    margin-top: 1rem;
+  }
+`;
+
 export const Para = styled("div")`
-  color: #18216d;
+  color: rgba(148, 163, 184, 0.88);
   font-size: 14px;
   width: 70%;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    max-width: 40ch;
+  }
 `;
 
 export const Large = styled(Link)`
   font-size: 16px;
-  color: #000;
+  color: rgba(226, 232, 240, 0.88);
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: color 0.25s ease, text-decoration-color 0.25s ease, text-shadow 0.25s ease;
   text-transform: capitalize;
   line-height: 24px;
   display: block;
   margin-bottom: 0.625rem;
-  transition: all 0.3s ease-in-out;
   max-width: max-content;
 
   &:hover {
-    color: rgb(255, 130, 92);
+    color: #22d3ee;
     text-underline-position: under;
-    text-decoration: rgb(255, 130, 92) wavy underline;
+    text-decoration: rgba(34, 211, 238, 0.75) wavy underline;
+    text-shadow: 0 0 22px rgba(34, 211, 238, 0.35);
   }
 `;
 
 export const Chat = styled("p")`
-  color: #18216d;
+  color: rgba(226, 232, 240, 0.88);
   max-width: fit-content;
-  border-bottom: 1px solid #18216d;
+  border-bottom: 1px solid rgba(34, 211, 238, 0.45);
   cursor: pointer;
   margin-top: 1rem;
-  transition: all 0.3s ease-in-out;
+  transition: color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    border-bottom: 1px solid rgb(255, 130, 92);
-    color: rgb(255, 130, 92);
+    border-bottom: 1px solid rgba(167, 139, 250, 0.75);
+    color: #a78bfa;
+    box-shadow: 0 8px 28px rgba(167, 139, 250, 0.12);
   }
 `;
 
@@ -121,7 +146,7 @@ export const FooterContainer = styled("div")`
     height: 25px;
 
     &:hover {
-      fill: rgb(255, 130, 92);
+      filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.65));
     }
   }
 `;
@@ -129,7 +154,7 @@ export const FooterContainer = styled("div")`
 export const Language = styled("h4")`
   font-size: 22px;
   text-transform: capitalize;
-  color: #18216d;
+  color: rgba(248, 250, 252, 0.92);
 
   @media screen and (max-width: 414px) {
     padding: 1.5rem 0;
@@ -139,7 +164,7 @@ export const Language = styled("h4")`
 export const Label = styled("label")`
   font-size: 22px;
   text-transform: capitalize;
-  color: #18216d;
+  color: rgba(248, 250, 252, 0.88);
   display: block;
   margin-bottom: 2rem;
   font-family: "Motiva Sans Bold", serif;

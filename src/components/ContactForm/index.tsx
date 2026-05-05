@@ -1,16 +1,14 @@
 import { Row, Col } from "antd";
-import { withTranslation } from "react-i18next";
-import { Slide } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 import { ContactProps, ValidationTypeProps } from "./types";
 import { useForm } from "../../common/utils/useForm";
 import validate from "../../common/utils/validationRules";
 import { Button } from "../../common/Button";
-import Block from "../Block";
 import Input from "../../common/Input";
 import TextArea from "../../common/TextArea";
 import { ContactContainer, FormGroup, Span, ButtonContainer } from "./styles";
 
-const Contact = ({ title, content, id, t }: ContactProps) => {
+const Contact = ({ id }: ContactProps) => {
   const { values, errors, handleChange, handleSubmit } = useForm(validate);
 
   const ValidationType = ({ type }: ValidationTypeProps) => {
@@ -20,53 +18,60 @@ const Contact = ({ title, content, id, t }: ContactProps) => {
 
   return (
     <ContactContainer id={id}>
-      <Row justify="space-between" align="middle">
-        <Col lg={12} md={11} sm={24} xs={24}>
-          <Slide direction="left" triggerOnce>
-            <Block title={title} content={content} />
-          </Slide>
-        </Col>
-        <Col lg={12} md={12} sm={24} xs={24}>
-          <Slide direction="right" triggerOnce>
+      <Row justify="center">
+        <Col lg={12} md={16} sm={24} xs={24}>
+          <Fade triggerOnce fraction={0.2}>
             <FormGroup autoComplete="off" onSubmit={handleSubmit}>
-              <Col span={24}>
-                <Input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  value={values.name || ""}
-                  onChange={handleChange}
-                />
-                <ValidationType type="name" />
-              </Col>
-              <Col span={24}>
-                <Input
-                  type="text"
-                  name="email"
-                  placeholder="Your Email"
-                  value={values.email || ""}
-                  onChange={handleChange}
-                />
-                <ValidationType type="email" />
-              </Col>
-              <Col span={24}>
-                <TextArea
-                  placeholder="Your Message"
-                  value={values.message || ""}
-                  name="message"
-                  onChange={handleChange}
-                />
-                <ValidationType type="message" />
-              </Col>
+              <Row gutter={[20, 0]}>
+                <Col xs={24} md={12}>
+                  <Input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    value={values.name || ""}
+                    onChange={handleChange}
+                  />
+                  <ValidationType type="name" />
+                </Col>
+                <Col xs={24} md={12}>
+                  <Input
+                    type="text"
+                    name="email"
+                    placeholder="Your Email"
+                    value={values.email || ""}
+                    onChange={handleChange}
+                  />
+                  <ValidationType type="email" />
+                </Col>
+                <Col span={24}>
+                  <Input
+                    type="text"
+                    name="company"
+                    placeholder="Your Company Name"
+                    value={values.company || ""}
+                    onChange={handleChange}
+                  />
+                  <ValidationType type="company" />
+                </Col>
+                <Col span={24}>
+                  <TextArea
+                    placeholder="Describe your operations"
+                    value={values.operations || ""}
+                    name="operations"
+                    onChange={handleChange}
+                  />
+                  <ValidationType type="operations" />
+                </Col>
+              </Row>
               <ButtonContainer>
-                <Button name="submit">{t("Submit")}</Button>
+                <Button name="submit">Submit</Button>
               </ButtonContainer>
             </FormGroup>
-          </Slide>
+          </Fade>
         </Col>
       </Row>
     </ContactContainer>
   );
 };
 
-export default withTranslation()(Contact);
+export default Contact;

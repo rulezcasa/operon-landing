@@ -1,54 +1,57 @@
 import { lazy } from "react";
-import IntroContent from "../../content/IntroContent.json";
-import MiddleBlockContent from "../../content/MiddleBlockContent.json";
+import HeroContent from "../../content/HeroContent.json";
 import AboutContent from "../../content/AboutContent.json";
-import MissionContent from "../../content/MissionContent.json";
+import SecurityContent from "../../content/SecurityContent.json";
 import ProductContent from "../../content/ProductContent.json";
 import ContactContent from "../../content/ContactContent.json";
 
 const Contact = lazy(() => import("../../components/ContactForm"));
-const MiddleBlock = lazy(() => import("../../components/MiddleBlock"));
+const HeroBlock = lazy(() => import("../../components/HeroBlock"));
+const IndustryChatMockups = lazy(
+  () => import("../../components/IndustryChatMockups")
+);
+const ScrollExpandingPainPoints = lazy(
+  () => import("../../components/ScrollExpandingPainPoints")
+);
 const Container = lazy(() => import("../../common/Container"));
 const ScrollToTop = lazy(() => import("../../common/ScrollToTop"));
 const ContentBlock = lazy(() => import("../../components/ContentBlock"));
+const SecurityVisual = lazy(() => import("../../components/SecurityVisual"));
 
 const Home = () => {
   return (
     <Container>
       <ScrollToTop />
-      <ContentBlock
-        direction="right"
-        title={IntroContent.title}
-        content={IntroContent.text}
-        button={IntroContent.button}
-        icon="developer.svg"
-        id="intro"
+      <HeroBlock
+        title={HeroContent.title}
+        content={HeroContent.text}
+        button={HeroContent.button}
       />
-      <MiddleBlock
-        title={MiddleBlockContent.title}
-        content={MiddleBlockContent.text}
-        button={MiddleBlockContent.button}
-      />
+      <IndustryChatMockups />
       <ContentBlock
         direction="left"
         title={AboutContent.title}
         content={AboutContent.text}
         section={AboutContent.section}
-        icon="graphs.svg"
+        icon="/img/software.png"
         id="about"
       />
+      <ScrollExpandingPainPoints />
       <ContentBlock
         direction="right"
-        title={MissionContent.title}
-        content={MissionContent.text}
-        icon="product-launch.svg"
+        title={SecurityContent.title}
+        content={SecurityContent.text}
+        topIcon="/img/lock.svg"
+        icon="/img/security_graphic.png"
+        illustration={<SecurityVisual />}
         id="mission"
       />
       <ContentBlock
         direction="left"
+        lightTheme
         title={ProductContent.title}
         content={ProductContent.text}
-        icon="waving.svg"
+        icon="/img/contact.png"
         id="product"
       />
       <Contact

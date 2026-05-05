@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Row, Col, Drawer } from "antd";
-import { withTranslation, TFunction } from "react-i18next";
 import Container from "../../common/Container";
-import { SvgIcon } from "../../common/SvgIcon";
+import { LogoMark } from "../../common/LogoMark";
 import { Button } from "../../common/Button";
 import {
   HeaderSection,
@@ -13,11 +12,24 @@ import {
   CustomNavLinkSmall,
   Label,
   Outline,
-  Span,
 } from "./styles";
 
-const Header = ({ t }: { t: TFunction }) => {
+const Header = () => {
   const [visible, setVisibility] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowHeader(window.scrollY <= 8);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const toggleButton = () => {
     setVisibility(!visible);
@@ -33,33 +45,23 @@ const Header = ({ t }: { t: TFunction }) => {
     };
     return (
       <>
-        <CustomNavLinkSmall onClick={() => scrollTo("about")}>
-          <Span>{t("About")}</Span>
-        </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("mission")}>
-          <Span>{t("Mission")}</Span>
-        </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("product")}>
-          <Span>{t("Product")}</Span>
-        </CustomNavLinkSmall>
-        <CustomNavLinkSmall
-          style={{ width: "180px" }}
-          onClick={() => scrollTo("contact")}
-        >
-          <Span>
-            <Button>{t("Contact")}</Button>
-          </Span>
+        <CustomNavLinkSmall onClick={() => scrollTo("contact")}>
+          <Button>Book a Demo</Button>
         </CustomNavLinkSmall>
       </>
     );
   };
 
+  if (!showHeader) {
+    return null;
+  }
+
   return (
     <HeaderSection>
       <Container>
         <Row justify="space-between">
-          <LogoContainer to="/" aria-label="homepage">
-            <SvgIcon src="logo.svg" width="101px" height="64px" />
+          <LogoContainer to="/" aria-label="Operon AI home">
+            <LogoMark />
           </LogoContainer>
           <NotHidden>
             <MenuItem />
@@ -86,4 +88,4 @@ const Header = ({ t }: { t: TFunction }) => {
   );
 };
 
-export default withTranslation()(Header);
+export default Header;

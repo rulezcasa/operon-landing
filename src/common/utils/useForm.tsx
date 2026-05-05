@@ -3,14 +3,16 @@ import { notification } from "antd";
 
 interface IValues {
   name: string;
+  company: string;
   email: string;
-  message: string;
+  operations: string;
 }
 
 const initialValues: IValues = {
   name: "",
+  company: "",
   email: "",
-  message: "",
+  operations: "",
 };
 
 export const useForm = (validate: { (values: IValues): IValues }) => {
