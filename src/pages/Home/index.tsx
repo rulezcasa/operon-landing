@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <Container>
       <Helmet>
-        <title>Operon AI | AI Automation for Businesses</title>
+        <title>Operon AI</title>
         <meta
           name="description"
           content="Operon AI helps businesses automate customer interactions, operations, and workflows with secure, AI-powered solutions."
