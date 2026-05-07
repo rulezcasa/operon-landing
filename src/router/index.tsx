@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import routes from "./config";
@@ -21,6 +22,18 @@ const Router = () => {
             />
           );
         })}
+        <Route>
+          <main style={{ minHeight: "60vh", padding: "8rem 1.5rem 3rem" }}>
+            <Helmet>
+              <title>404 | Operon AI</title>
+              <meta
+                name="description"
+                content="The page you are looking for could not be found."
+              />
+            </Helmet>
+            <h1>404 - Page Not Found</h1>
+          </main>
+        </Route>
       </Switch>
       <Footer />
     </Suspense>

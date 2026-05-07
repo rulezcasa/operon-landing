@@ -61,7 +61,7 @@ export const ContentWrapper = styled("div")`
   position: relative;
   max-width: 540px;
 
-  > h6 {
+  > h2 {
     margin: 0.65rem 0 0;
     font-size: ${({ $lightTheme }: { $lightTheme?: boolean }) =>
       $lightTheme
@@ -108,7 +108,7 @@ export const MinBadge = styled("div")`
   box-shadow: 0 10px 24px rgba(2, 6, 23, 0.12);
 `;
 
-export const MinTitle = styled("h6")`
+export const MinTitle = styled("h3")`
   margin: 0;
   font-size: clamp(1.15rem, 0.95rem + 0.9vw, 1.75rem);
   line-height: 1.15;

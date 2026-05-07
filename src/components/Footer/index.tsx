@@ -31,8 +31,7 @@ const Footer = () => {
             </Col>
             <Col lg={10} md={10} sm={24} xs={24}>
               <Title>Policy</Title>
-              <Large to="/">Privacy Policy</Large>
-              <Large to="/">Terms of Service</Large>
+              <Large to="/privacy-policy">Privacy Policy</Large>
             </Col>
           </Row>
         </Container>

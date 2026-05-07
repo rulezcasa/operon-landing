@@ -68,7 +68,7 @@ const ContentBlock = ({
                     <SvgIcon src={topIcon} width="44px" height="44px" />
                   </TopIcon>
                 )}
-                <h6>{title}</h6>
+                <h2>{title}</h2>
                 <Content $lightTheme={lightTheme}>{content}</Content>
                 {direction === "right" ? (
                   <ButtonWrapper>
