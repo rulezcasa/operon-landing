@@ -1,5 +1,4 @@
 import { lazy } from "react";
-import { Helmet } from "react-helmet";
 import HeroContent from "../../content/HeroContent.json";
 import AboutContent from "../../content/AboutContent.json";
 import SecurityContent from "../../content/SecurityContent.json";
@@ -22,13 +21,6 @@ const SecurityVisual = lazy(() => import("../../components/SecurityVisual"));
 const Home = () => {
   return (
     <Container>
-      <Helmet>
-        <title>Operon AI</title>
-        <meta
-          name="description"
-          content="Operon AI helps businesses automate customer interactions, operations, and workflows with secure, AI-powered solutions."
-        />
-      </Helmet>
       <ScrollToTop />
       <HeroBlock
         title={HeroContent.title}
