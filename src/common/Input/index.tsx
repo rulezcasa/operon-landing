@@ -2,9 +2,16 @@ import { Container, StyledInput } from "./styles";
 import { Label } from "../TextArea/styles";
 import { InputProps } from "../types";
 
-const Input = ({ name, placeholder, onChange, value, type = "text" }: InputProps) => (
+const Input = ({
+  name,
+  label,
+  placeholder,
+  onChange,
+  value,
+  type = "text",
+}: InputProps) => (
   <Container>
-    <Label htmlFor={name}>{name}</Label>
+    <Label htmlFor={name}>{label ?? name}</Label>
     <StyledInput
       placeholder={placeholder}
       name={name}

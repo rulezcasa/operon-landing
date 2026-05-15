@@ -144,16 +144,6 @@ export const TopBarSub = styled.div`
   margin-top: 2px;
 `;
 
-export const OnlineDot = styled.div`
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #34d399, #059669);
-  margin-left: auto;
-  flex-shrink: 0;
-  box-shadow: 0 0 10px rgba(52, 211, 153, 0.45);
-`;
-
 export const Msgs = styled.div`
   flex: 1;
   padding: 14px 12px;

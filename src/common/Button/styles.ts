@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-export const StyledButton = styled("button").withConfig({
-  shouldForwardProp: (prop) => prop !== "color",
-})<{ color?: string }>`
+export const StyledButton = styled("button")`
   position: relative;
   box-sizing: border-box;
   display: inline-block;

@@ -12,9 +12,10 @@ import { validateProps } from "../../common/types";
 
 const initialValues: validateProps = {
   name: "",
-  company: "",
   email: "",
-  operations: "",
+  business: "",
+  teamTime: "",
+  channels: "",
 };
 
 
@@ -43,8 +44,9 @@ const Contact = ({ id }: ContactProps) => {
     await formspreeSubmit({
       name: values.name,
       email: values.email,
-      company: values.company,
-      operations: values.operations,
+      business: values.business,
+      teamTime: values.teamTime,
+      channels: values.channels,
     });
   };
 
@@ -89,7 +91,8 @@ const Contact = ({ id }: ContactProps) => {
                   <Input
                     type="text"
                     name="name"
-                    placeholder="Your Name"
+                    label="Name"
+                    placeholder="Your name"
                     value={values.name}
                     onChange={handleChange}
                   />
@@ -100,7 +103,8 @@ const Contact = ({ id }: ContactProps) => {
                   <Input
                     type="text"
                     name="email"
-                    placeholder="Your Email"
+                    label="Email"
+                    placeholder="Your email"
                     value={values.email}
                     onChange={handleChange}
                   />
@@ -114,29 +118,47 @@ const Contact = ({ id }: ContactProps) => {
                 <Col span={24}>
                   <Input
                     type="text"
-                    name="company"
-                    placeholder="Your Company Name"
-                    value={values.company}
+                    name="business"
+                    label="What does your business do?"
+                    placeholder="We run a ___________"
+                    value={values.business}
                     onChange={handleChange}
                   />
-                  <ValidationType type="company" />
+                  <ValidationType type="business" />
                   <ValidationError
-                    prefix="Company"
-                    field="company"
+                    prefix="Business"
+                    field="business"
                     errors={state.errors}
                   />
                 </Col>
                 <Col span={24}>
                   <TextArea
-                    placeholder="Describe your operations"
-                    value={values.operations}
-                    name="operations"
+                    name="teamTime"
+                    label="What's keeping your team busy?"
+                    placeholder="Briefly tell us what's taking up most of your team's time right now?"
+                    value={values.teamTime}
                     onChange={handleChange}
                   />
-                  <ValidationType type="operations" />
+                  <ValidationType type="teamTime" />
                   <ValidationError
-                    prefix="Operations"
-                    field="operations"
+                    prefix="Team time"
+                    field="teamTime"
+                    errors={state.errors}
+                  />
+                </Col>
+                <Col span={24}>
+                  <Input
+                    type="text"
+                    name="channels"
+                    label="Which channels are your customers reaching you on?"
+                    placeholder="e.g. WhatsApp, phone calls, walk-ins - whatever applies."
+                    value={values.channels}
+                    onChange={handleChange}
+                  />
+                  <ValidationType type="channels" />
+                  <ValidationError
+                    prefix="Channels"
+                    field="channels"
                     errors={state.errors}
                   />
                 </Col>

@@ -4,8 +4,6 @@ export interface ContainerProps {
 }
 
 export interface ButtonProps {
-  color?: string;
-  name?: string;
   children: React.ReactNode;
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
@@ -20,6 +18,7 @@ export interface SvgIconProps {
 
 export interface InputProps {
   name: string;
+  label?: string;
   placeholder: string;
   type?: string;
   value?: string;
@@ -31,7 +30,8 @@ export interface InputProps {
 }
 export interface validateProps {
   name: string;
-  company: string;
   email: string;
-  operations: string;
+  business: string;
+  teamTime: string;
+  channels: string;
 }

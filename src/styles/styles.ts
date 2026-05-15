@@ -6,11 +6,8 @@ export const Styles = createGlobalStyle`
         --font-mono-ui: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo,
             Monaco, Consolas, monospace;
         --bg-void: #050508;
-        --bg-deep: #0a0c12;
         --accent: #22d3ee;
         --accent-soft: rgba(34, 211, 238, 0.55);
-        --accent-2: #a78bfa;
-        --glass: rgba(255, 255, 255, 0.045);
         --glass-border: rgba(255, 255, 255, 0.08);
         --text-body: rgba(241, 245, 249, 0.88);
         --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -176,10 +173,6 @@ export const Styles = createGlobalStyle`
     
     *:focus {
         outline: none;
-    }
-
-    .about-block-image svg {
-        text-align: center;
     }
 
     .ant-drawer-content {

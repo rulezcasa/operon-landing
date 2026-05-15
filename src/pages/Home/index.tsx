@@ -3,7 +3,6 @@ import HeroContent from "../../content/HeroContent.json";
 import AboutContent from "../../content/AboutContent.json";
 import SecurityContent from "../../content/SecurityContent.json";
 import ProductContent from "../../content/ProductContent.json";
-import ContactContent from "../../content/ContactContent.json";
 
 const Contact = lazy(() => import("../../components/ContactForm"));
 const HeroBlock = lazy(() => import("../../components/HeroBlock"));
@@ -54,11 +53,7 @@ const Home = () => {
         icon="/img/contact.png"
         id="product"
       />
-      <Contact
-        title={ContactContent.title}
-        content={ContactContent.text}
-        id="contact"
-      />
+      <Contact id="contact" />
     </Container>
   );
 };

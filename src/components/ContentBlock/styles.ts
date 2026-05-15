@@ -133,32 +133,6 @@ export const MinPara = styled("p")`
     "Liberation Mono", "Courier New", monospace;
 `;
 
-export const ButtonWrapper = styled("div")`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  max-width: 100%;
-
-  @media screen and (min-width: 1024px) {
-    max-width: 80%;
-  }
-
-  button:last-child {
-    margin-left: 0;
-  }
-
-  @media only screen and (max-width: 575px) {
-    justify-content: center;
-
-    button {
-      width: 100%;
-      min-width: 0;
-    }
-  }
-`;
-
 export const IllustrationCol = styled(Col)`
   img {
     filter: drop-shadow(0 28px 56px rgba(99, 102, 241, 0.22));
@@ -253,19 +227,4 @@ export const ChannelLogoItem = styled("span")`
     opacity: 0.92;
     filter: brightness(0) invert(1);
   }
-`;
-
-export const CallsItem = styled("span")`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 118px;
-  height: 52px;
-  background: transparent;
-  border: 0;
-  color: rgba(226, 232, 240, 0.62);
-  font-size: 1.45rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  text-transform: none;
 `;

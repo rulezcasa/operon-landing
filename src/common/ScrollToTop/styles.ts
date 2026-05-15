@@ -35,3 +35,12 @@ export const ScrollUpContainer = styled("div")<{
     display: none;
   }
 `;
+
+export const ScrollArrow = styled("span")`
+  display: block;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  user-select: none;
+`;
